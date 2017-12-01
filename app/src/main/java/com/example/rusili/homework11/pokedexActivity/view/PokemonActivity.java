@@ -8,9 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.rusili.homework11.R;
 
-/**
- * Created by olgakoleda on 11/29/17.
- */
 
 public class PokemonActivity extends AppCompatActivity {
     @Override
@@ -22,8 +19,6 @@ public class PokemonActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.main_container, pokedexFragment).commit();
-
-
 
     }
 }
