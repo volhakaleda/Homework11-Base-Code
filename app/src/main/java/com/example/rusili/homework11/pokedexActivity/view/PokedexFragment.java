@@ -25,10 +25,12 @@ public class PokedexFragment extends Fragment {
 	@Override
 	public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_layout, container, false);
+
 		RecyclerView pokemonRecyclerView = (RecyclerView) view.findViewById(R.id.pokemon_recyclerview);
 
 
 		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+
 		pokemonAdapter = new PokemonAdapter();
 
 		pokemonRecyclerView.setAdapter(pokemonAdapter);
@@ -46,8 +48,7 @@ public class PokedexFragment extends Fragment {
 			public void pokedexCallback (Pokedex pokedex) {
 
 				pokemonAdapter.setData(pokedex.getPokemon_entries());
-				// TODO: show Pokemon
-				// Each pokemon is in the Pokemon_Species object.
+
 			}
 		};
 		RetrofitFactory.getInstance().setPokedexListener(pokedexNetworkListener);
